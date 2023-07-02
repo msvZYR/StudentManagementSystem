@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zisu.springmvc.mapper.StudentMapper">
+
+<!--    List<Student> getAllStudent();-->
+    <select id="getAllStudent" resultType="com.zisu.springmvc.pojo.Student">
+        select * from t_student
+    </select>
+
+
+
+
+    <insert id="InsertbatchStudents">
+        insert into t_student values
+        <foreach collection="students" item="student" separator=",">
+            (#{student.stuid},#{student.stuname},#{student.clazzname},#{student.college},#{student.profession})
+        </foreach>
+    </insert>
+
+<!--    Student selectStudentByName(String stuname);-->
+<!--    <select id="selectStudentByName" resultType="com.zisu.ssm.pojo.Student">-->
+<!--        select * from t_student where stuname = #{stuname}-->
+<!--    </select>-->
+
+<!--    int insertStudent(Student student);-->
+<!--    <insert id="insertStudent" >-->
+<!--        insert into t_student values (#{stuid},#{stuname},#{clazzname})-->
+<!--    </insert>-->
+
+<!--    int deleteStudentById(String stuid);-->
+<!--    <delete id="deleteStudentById">-->
+<!--        delete from t_student where stuid = #{stuid}-->
+<!--    </delete>-->
+
+<!--    int updateStudentNameById(Student student);-->
+<!--    <update id="updateStudentNameById">-->
+<!--        update t_student set stuname=#{stuname} where stuid = #{stuid}-->
+<!--    </update>-->
+
+<!--     public int updateStudent( String stuid, String stuname,String clazzname)-->
+<!--        <update id="updateStudent">-->
+<!--            update t_student set stuname=#{stuname} where stuid = #{stuid}-->
+<!--        </update>-->
+
+
+<!--&lt;!&ndash;    List<Course> getCourseByStuId(String stuid);&ndash;&gt;-->
+<!--    <select id="getCourseByStuId" resultType="com.zisu.ssm.pojo.Course">-->
+<!--        select cor.* from t_student stu join t_class cla on stu.clazzname=cla.clazzname-->
+<!--            join t_schedule sche on stu.clazzname=sche.clazzname-->
+<!--            join t_course cor on cor.courseid=sche.courseid-->
+<!--        where stu.stuid = #{stuid}-->
+<!--    </select>-->
+
+</mapper>

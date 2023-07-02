@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zisu.springmvc.mapper.RecordMapper">
+
+<!--    List<Record> getAllRecord();-->
+    <select id="getAllRecord" resultType="com.zisu.springmvc.pojo.Record">
+        select * from t_record
+    </select>
+
+<!--    List<Record> selectRecordByUid(String uid);-->
+    <select id="selectRecordByUid" resultType="com.zisu.springmvc.pojo.Record">
+        select * from t_record where uid = #{uid}
+    </select>
+
+</mapper>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zisu.springmvc.mapper.TeacherMapper">
+
+<!--    List<Teacher> getAllTeacher();-->
+    <select id="getAllTeacher" resultType="com.zisu.springmvc.pojo.Teacher">
+        select * from t_teacher
+    </select>
+
+<!--    Teacher selectTeacherByName(@Param("tname") String tname);-->
+<!--    <select id="selectTeacherByName" resultType="com.zisu.ssm.pojo.Teacher">-->
+<!--        select * from t_teacher where tname = #{tname}-->
+<!--    </select>-->
+
+<!--    int insertTeacher(Teacher teacher);-->
+<!--    <insert id="insertTeacher" >-->
+<!--        insert into t_teacher values (#{tname},#{tid},#{gender},#{trank})-->
+<!--    </insert>-->
+
+<!--    int deleteTeacherById(@Param("tid") String tid);-->
+<!--    <delete id="deleteTeacherById">-->
+<!--        delete from t_teacher where tid = #{tid}-->
+<!--    </delete>-->
+
+<!--    int updateTeacherRankById(Teacher teacher);-->
+<!--    <update id="updateTeacherRankById">-->
+<!--        update t_teacher set trank=#{trank} where tid = #{tid}-->
+<!--    </update>-->
+</mapper>

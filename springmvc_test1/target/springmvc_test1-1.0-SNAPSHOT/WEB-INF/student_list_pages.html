@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学生分页列表</title>
+    <link rel="stylesheet" th:href="@{/static/css/index_work.css}">
+</head>
+<body>
+<table>
+    <tr>
+        <th colspan="5">学生分页列表</th>
+    </tr>
+    <tr>
+        <th>序号</th>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>班级</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="student,status : ${page.list}">
+        <td th:text="${status.count}"></td>
+        <td th:text="${student.stuid}"></td>
+        <td th:text="${student.stuname}"></td>
+        <td th:text="${student.clazzname}"></td>
+        <td>
+            <a href="">删除</a>
+            <a href="">修改</a>
+        </td>
+    </tr>
+</table>
+<div style="text-align: center;">
+    <a th:if="${page.hasPreviousPage}" th:href="@{/student/page/1}">首页</a>
+    <a th:if="${page.hasPreviousPage}" th:href="@{'/student/page/'+${page.prePage}}">上一页</a>
+    <span th:each="num : ${page.navigatepageNums}">
+        <a th:if="${page.pageNum == num}" style="color: red;" th:href="@{'/student/page/'+${num}}" th:text="'['+${num}+']'"></a>
+        <a th:if="${page.pageNum != num}" th:href="@{'/student/page/'+${num}}" th:text="${num}"></a>
+    </span>
+    <a th:if="${page.hasNextPage}" th:href="@{'/student/page/'+${page.nextPage}}">下一页</a>
+    <a th:if="${page.hasNextPage}" th:href="@{'/student/page/'+${page.pages}}">末页</a>
+</div>
+</body>
+</html>

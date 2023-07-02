@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zisu.springmvc.mapper.ScheduleMapper">
+<!--    List<Schedule> getAllSchedule();-->
+    <select id="getAllSchedule" resultType="com.zisu.springmvc.pojo.Schedule">
+        select * from t_schedule
+    </select>
+    <insert id="InsertbatchSchedules">
+        insert into t_schedule values
+        <foreach collection="schedules" item="schedule" separator=",">
+            (#{schedule.scheduleid},#{schedule.coursename},#{schedule.clazzname},#{schedule.tname},#{schedule.roomname})
+        </foreach>
+    </insert>
+<!--    int insertSchedule(Schedule schedule);-->
+<!--    <insert id="insertSchedule" >-->
+<!--        insert into t_schedule values (#{courseid},#{coursename},#{classname},#{tid})-->
+<!--    </insert>-->
+
+
+</mapper>

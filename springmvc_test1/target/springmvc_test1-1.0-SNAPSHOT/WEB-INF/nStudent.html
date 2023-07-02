@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>学生信息系统</title>
+    <script src="../static/js/lib/jquery.min.js"></script>
+    <script src="../static/js/lib/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/js/bootstrap-select.min.js"></script>
+    <script src="../static/js/href.js"></script>
+    <script src="../static/js/nStudent.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/lib/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/lib/bootstrap.min.css"/>
+    <link href="https://cdn.bootcss.com/bootstrap-select/2.0.0-beta1/css/bootstrap-select.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="wrap">
+    <div class="leftMeun" id="leftMeun">
+        <div id="logoDiv">
+            <p id="logoP"><span>学生信息系统</span></p>
+        </div>
+        <div id="personInfor">
+            <p id="nuserName">欢迎您</p>
+            <p>
+                <a id="exit">退出登录</a>
+            </p>
+        </div>
+        <div id="nStudent" class="meun-item meun-item-active"><img src="../static/images/icon_chara_grey.png">学生查询</div>
+        <div id="nCourse" class="meun-item"><img src="../static/images/icon_house_grey.png">课程查询</div>
+        <div id="nType" class="meun-item"><img src="../static/images/icon_card_grey.png">班级查询</div>
+        <div id="nSelect" class="meun-item"><img src="../static/images/icon_user_grey.png">排课查询</div>
+        <div id="nCenter" class="meun-item"><img src="../static/images/icon_change_grey.png">用户中心</div>
+    </div>
+    <div id="rightContent">
+        <div class="tab-content">
+            <!--学生管理模块-->
+            <div role="tabpanel" class="tab-pane active">
+                <div class="check-div form-inline" style="display: flex;justify-content: space-between">
+                    <div class="col-xs-4" style="width: 30%">
+                        <input type="text" class="form-control input-sm" id="keyword" placeholder="输入学生姓名">
+                        <button class="btn btn-white btn-xs " id="search">查 询</button>
+                    </div>
+                    <div class="col-xs-4 col-lg-4  col-md-5" style="width: 50%;text-align:right;">
+                        <button class="btn btn-white btn-xs " id="exportStu">导出</button>
+                    </div>
+                </div>
+                <div class="data-div">
+                    <div class="row tableHeader">
+                        <div class="col-xs-2 ">
+                            学号
+                        </div>
+                        <div class="col-xs-2">
+                            姓名
+                        </div>
+                        <div class="col-xs-2">
+                            学院
+                        </div>
+                        <div class="col-xs-2">
+                            专业
+                        </div>
+                        <div class="col-xs-2">
+                            班级
+                        </div>
+                    </div>
+                    <div class="tablebody" id="tableBody">
+                    </div>
+                    <div style="text-align: center;" id="tableNav"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

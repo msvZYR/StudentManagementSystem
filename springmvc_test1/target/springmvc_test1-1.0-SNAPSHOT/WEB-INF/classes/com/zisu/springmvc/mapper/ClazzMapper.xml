@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zisu.springmvc.mapper.ClazzMapper">
+
+<!--    List<Clazz> getAllClass();-->
+    <select id="getAllClass" resultType="com.zisu.springmvc.pojo.Clazz">
+        select * from t_class
+    </select>
+    <insert id="InsertbatchClazzs">
+        insert into t_class values
+        <foreach collection="clazzs" item="clazz" separator=",">
+            (#{clazz.clazzid},#{clazz.clazzname},#{clazz.clazztname})
+        </foreach>
+    </insert>
+<!--    Clazz selectClazzByName(@Param("clazzname") String clazzname);    -->
+<!--    <select id="selectClassByName" resultType="com.zisu.ssm.pojo.Clazz">-->
+<!--        select * from t_class where clazzname = #{clazzname}-->
+<!--    </select>-->
+
+<!--    int insertClass(Clazz clazz);-->
+<!--    <insert id="insertClass" >-->
+<!--        insert into t_class values (#{clazzid},#{clazzname})-->
+<!--    </insert>-->
+
+<!--    int deleteClassById(String clazzid);-->
+<!--    <delete id="deleteClassById">-->
+<!--        delete from t_class where clazzid = #{clazzid}-->
+<!--    </delete>-->
+
+<!--    int updateClassNameById(Clazz clazz);-->
+<!--    <update id="updateClassNameById">-->
+<!--        update t_class set clazzname=#{clazzname} where clazzid= #{clazzid}-->
+<!--    </update>-->
+
+</mapper>
